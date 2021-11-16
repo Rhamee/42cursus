@@ -1,18 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrha <hrha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 17:25:08 by hrha              #+#    #+#             */
-/*   Updated: 2021/11/16 18:26:30 by hrha             ###   ########.fr       */
+/*   Created: 2021/11/16 18:59:46 by hrha              #+#    #+#             */
+/*   Updated: 2021/11/16 19:58:31 by hrha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include <stdlib.h>
+
+void	*memmove(void *dst, const void *src, size_t len)
 {
-	if (0 <= c && c <= 127)
-		return (1);
-	return (0);
+	size_t	i;
+
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	if (dst < src)
+	{
+		i = 0;
+		while (i < len)
+		{
+			*((char *)dst + i) = *((char *)src + i);
+			i++;
+		}
+	}
+	else
+	{
+		i = len;
+		while (i)
+		{
+			*((char *)dst + i - 1) = *((char *)src + i - 1);
+			i--;
+		}
+	}
+	return (dst);
 }

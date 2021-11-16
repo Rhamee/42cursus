@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrha <hrha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 17:25:08 by hrha              #+#    #+#             */
-/*   Updated: 2021/11/16 18:26:30 by hrha             ###   ########.fr       */
+/*   Created: 2021/11/16 18:33:35 by hrha              #+#    #+#             */
+/*   Updated: 2021/11/16 19:40:43 by hrha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include <stdlib.h>
+
+void	*memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	if (0 <= c && c <= 127)
-		return (1);
-	return (0);
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		*((char *)dst + i) = *((char *)src + i);
+		i++;
+	}
+	return (dst);
 }

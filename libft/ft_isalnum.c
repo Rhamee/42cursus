@@ -6,16 +6,17 @@
 /*   By: hrha <hrha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 17:18:39 by hrha              #+#    #+#             */
-/*   Updated: 2021/11/16 17:23:38 by hrha             ###   ########.fr       */
+/*   Updated: 2021/11/16 18:25:07 by hrha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c){
-	if (65 =< c && c =< 90)
+int	ft_isalnum(int c)
+{
+	if (65 <= c && c <= 90)
 		return (1);
-	else if (97 =< c && c =< 122)
+	else if (97 <= c && c <= 122)
 		return (2);
 	else if (48 <= c && c <= 57)
 		return (4);
-	return 	(0);
+	return (0);
 }

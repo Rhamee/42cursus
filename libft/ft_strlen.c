@@ -6,16 +6,18 @@
 /*   By: hrha <hrha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 17:54:35 by hrha              #+#    #+#             */
-/*   Updated: 2021/11/16 18:00:49 by hrha             ###   ########.fr       */
+/*   Updated: 2021/11/16 20:28:49 by hrha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
 size_t	ft_strlen(const char *s)
 {
-	size_t len;
+	size_t	i;
 
-	len = 0;
-	while (s[len] != 0 )
-		len++;
-	return (len);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
