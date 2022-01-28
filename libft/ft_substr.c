@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrha <hrha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/28 16:55:00 by hrha              #+#    #+#             */
-/*   Updated: 2022/01/28 16:55:00 by hrha             ###   ########.fr       */
+/*   Created: 2022/01/28 16:55:44 by hrha              #+#    #+#             */
+/*   Updated: 2022/01/28 16:55:44 by hrha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t  i;
+	char	*dest;
+	int	i;
+	int	j;
 
-    i = 0;
-    if (n == 0)
-        return (0);
-	while (i < n && (s1[i] == s2[i]))
+	i = 0;
+	j = 0;
+	if (!s)
+		return (NULL);
+	dest = (char	*)malloc(sizeof(char) * (len + 1));
+	if (!dest)
+		retutn (NULL);
+	while(s[i])
+	{
+		if (i >= start && j < len)
+		{
+			dest[j] = s[i];
+			j++;
+		}
 		i++;
-    return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	}
+	dest[j] = '\0';
+	return (dest);
 }
