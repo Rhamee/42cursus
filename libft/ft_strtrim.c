@@ -10,45 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-static size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-static char	*ft_strchr(const char *s, int c)
-{
-	int	i;
-
-	i = 0;
-	while (*(s + i))
-	{
-		if (*(s + i) == c)
-			return ((char *)(s + i));
-		i++;
-	}
-	return (0);
-}
-
-static size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < dstsize)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = 0;
-	return (ft_strlen(src));
-}
+#include "libft.h"
 
 char *ft_strtrim(char const *s1, char const *set)
 {

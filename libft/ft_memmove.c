@@ -6,11 +6,11 @@
 /*   By: hrha <hrha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 18:59:46 by hrha              #+#    #+#             */
-/*   Updated: 2021/11/16 19:58:31 by hrha             ###   ########.fr       */
+/*   Updated: 2022/01/29 17:33:30 by hrha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

@@ -6,11 +6,11 @@
 /*   By: hrha <hrha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 17:54:35 by hrha              #+#    #+#             */
-/*   Updated: 2021/11/16 20:28:49 by hrha             ###   ########.fr       */
+/*   Updated: 2022/01/29 17:35:01 by hrha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

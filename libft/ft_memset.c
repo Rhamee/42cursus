@@ -6,11 +6,11 @@
 /*   By: hrha <hrha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 18:11:34 by hrha              #+#    #+#             */
-/*   Updated: 2021/11/16 19:35:59 by hrha             ###   ########.fr       */
+/*   Updated: 2022/01/29 17:33:40 by hrha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {

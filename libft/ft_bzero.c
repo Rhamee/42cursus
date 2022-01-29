@@ -6,11 +6,11 @@
 /*   By: hrha <hrha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 18:27:57 by hrha              #+#    #+#             */
-/*   Updated: 2021/11/16 19:39:02 by hrha             ###   ########.fr       */
+/*   Updated: 2022/01/29 17:32:16 by hrha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

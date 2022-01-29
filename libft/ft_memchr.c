@@ -6,11 +6,11 @@
 /*   By: hrha <hrha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 19:23:48 by hrha              #+#    #+#             */
-/*   Updated: 2021/12/15 19:52:04 by hrha             ###   ########seoul.kr  */
+/*   Updated: 2022/01/29 17:33:02 by hrha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void    *memchr(const void *s, int c, size_t n)
 {

@@ -6,11 +6,11 @@
 /*   By: hrha <hrha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 18:33:35 by hrha              #+#    #+#             */
-/*   Updated: 2021/11/16 19:40:43 by hrha             ###   ########.fr       */
+/*   Updated: 2022/01/29 17:33:23 by hrha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
