@@ -6,9 +6,11 @@
 /*   By: hrha <hrha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 16:30:59 by hrha              #+#    #+#             */
-/*   Updated: 2021/12/15 18:38:41 by hrha             ###   ########seoul.kr  */
+/*   Updated: 2022/02/01 19:35:28 by hrha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char    *ft_strrchr(const char *s, int c)
 {
