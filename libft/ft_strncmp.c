@@ -6,7 +6,7 @@
 /*   By: hrha <hrha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 18:52:20 by hrha              #+#    #+#             */
-/*   Updated: 2022/02/01 20:26:28 by hrha             ###   ########.fr       */
+/*   Updated: 2022/02/01 21:16:39 by hrha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 
     i = 0;
     if (n == 0)
+    {
         return (0);
+    }
 	while (i < n && (s1[i] == s2[i]) && s1[i])
 		i++;
     return ((unsigned char)s1[i] - (unsigned char)s2[i]);

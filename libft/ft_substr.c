@@ -24,10 +24,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	dest = (char	*)malloc(sizeof(char) * (len + 1));
 	if (!dest)
-		retutn (NULL);
+		return (NULL);
 	while(s[i])
 	{
-		if (i >= start && j < len)
+		if ((unsigned int)i >= start && (size_t)j < len)
 		{
 			dest[j] = s[i];
 			j++;

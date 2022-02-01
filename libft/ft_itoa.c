@@ -25,13 +25,13 @@ static int	count(long long num)
 	return (i);
 }
 
-static void	putnum(char *dst, int sign, int digit)
+static void	putnum(long long num, char *dst, int sign, int digit)
 {
 	if (sign == 1)
-		result[0] = '-';
-	whlie (digit > sign)
+		dst[0] = '-';
+	while (digit > sign)
 	{
-		result[digit - 1] = (num % 10) + '0';
+		dst[digit - 1] = (num % 10) + '0';
 		num /= 10;
 		digit--;
 	}
@@ -55,8 +55,9 @@ char *ft_itoa(int n)
 		sign = 0;
 	}
 	digit = count(num) + sign;
-	if (!(result = (char *)malloc(sizeof(char) * digit)))
+	result = (char *)malloc(sizeof(char) * digit);
+	if (!result)
 		return (NULL);
-	putnum(result, sign, digit);
+	putnum(num,result, sign, digit);
 	return (result);
 }

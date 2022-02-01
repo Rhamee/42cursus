@@ -44,7 +44,7 @@ static char	**split_free(char	**dst, int n)
 {
 	while (n >= 0)
 	{
-		free(dest[n]);
+		free(dst[n]);
 		n--;
 	}
 	return (NULL);
@@ -58,7 +58,7 @@ char	**ft_split(char const *s, char c)
 	int		j;
 
 	i = 0;
-	j = 0
+	j = 0;
 	num = count(s, c);
 	dest = (char**)malloc(sizeof(char*) * num);
 	if (!dest)
@@ -70,7 +70,7 @@ char	**ft_split(char const *s, char c)
 		dest[i] = (char*)malloc(sizeof(char) * (split_strlen(s + j, c) + 1));
 		if (!dest[i])
 			return (split_free(dest, i));
-		ft_strlcpy(dest, s + j, split_strlen(s + j, c) + 1);
+		ft_strlcpy(dest[i], s + j, split_strlen(s + j, c) + 1);
 		j += split_strlen(s + j, c);
 		i++;
 	}

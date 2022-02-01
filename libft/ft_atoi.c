@@ -19,22 +19,22 @@ int	ft_atoi(const char *nptr)
 
 	result = 0;
 	sign = 1;
-	while ((nptr >= 9 && nptr <= 13) || nptr == 32)
+	while ((*nptr >= 9 && *nptr <= 13) || *nptr == 32)
 		nptr++;
-	if (nptr == '-' || nptr == '+')
+	if (*nptr == '-' || *nptr == '+')
 	{
-		if (nptr == '-')
+		if (*nptr == '-')
 			sign = -1;
 		nptr++;
 	}
-	while (nptr >= '0' && nptr <= '9')
+	while (*nptr >= '0' && *nptr <= '9')
 	{
-        result = result * 10 + nptr - '0';
+        result = result * 10 + *nptr - '0';
         nptr++;
     }
 	if (result > 9223372036854775807 && sign == 1)
 		return (-1);
-	if (result > 9223372036854775808 && sign == -1)
-		return (0);	
+	/*if (result > 9223372036854775808 && sign == -1)
+		return (0);*/
 	return ((result*sign));
 }

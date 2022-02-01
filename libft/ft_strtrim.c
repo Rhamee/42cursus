@@ -33,7 +33,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		str = (char *)malloc(sizeof(char) * (j - i + 2));
 		if (!str)
 			return (NULL);
-		ft_strlcpy(str, s1[i], j - i + 2)
+		ft_strlcpy(str, (char	*)s1 + i, j - i + 2);
 	}
 	return (str);
 }
