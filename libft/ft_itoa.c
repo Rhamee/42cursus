@@ -24,7 +24,8 @@ static int	count(long long num)
 	}
 	return (i);
 }
-static void putnum(char *dst, int sign, int digit)
+
+static void	putnum(char *dst, int sign, int digit)
 {
 	if (sign == 1)
 		result[0] = '-';

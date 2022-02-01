@@ -19,7 +19,7 @@ static int	count(char const *s, char c)
 
 	i = 0;
 	num = 0;
-	while(s[i] == 0 || s[i + 1] == 0)
+	while (s[i] == 0 || s[i + 1] == 0)
 	{
 		if (s[i] != c && s[i + 1] == c)
 			num++;
@@ -40,36 +40,36 @@ static size_t	split_strlen(const char *s, char c)
 	return (i);
 }
 
-static void	split_free(char ** dst, int n)
+static char	**split_free(char	**dst, int n)
 {
 	while (n >= 0)
 	{
 		free(dest[n]);
 		n--;
 	}
+	return (NULL);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char **dest;
-	int	num;
-	int	i;
-	int	j;
+	char	**dest;
+	int		num;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0
 	num = count(s, c);
-	if (!(dest = (char**)malloc(sizeof(char*) * num)))
+	dest = (char**)malloc(sizeof(char*) * num);
+	if (!dest)
 		return (NULL);
 	while (i < num)
 	{
 		while (s[j] == c)
 			j++;
-		if (!(dest[i] = (char*)malloc(sizeof(char) * (split_strlen(s + j, c) + 1));))
-		{
-			split_free(dest, i);
-			return (NULL);
-		}
+		dest[i] = (char*)malloc(sizeof(char) * (split_strlen(s + j, c) + 1));
+		if (!dest[i])
+			return (split_free(dest, i));
 		ft_strlcpy(dest, s + j, split_strlen(s + j, c) + 1);
 		j += split_strlen(s + j, c);
 		i++;

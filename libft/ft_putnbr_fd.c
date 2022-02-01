@@ -38,7 +38,7 @@ static void	nb_check(int nb, int fd, char *b, int count)
 	}
 }
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	char	b[10];
 	int		count;
