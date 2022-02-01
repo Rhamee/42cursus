@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	count(long long num)
+static int	count(long long num)
 {
 	int	i;
 
@@ -24,7 +24,7 @@ int	count(long long num)
 	}
 	return (i);
 }
-void putnum(char *dst, int sign, int digit)
+static void putnum(char *dst, int sign, int digit)
 {
 	if (sign == 1)
 		result[0] = '-';
