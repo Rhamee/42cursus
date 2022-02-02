@@ -16,9 +16,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*result;
 
-	result = (char	*)malloc(size * nmemb);
+	result = (char *)malloc(size * nmemb);
 	if (!result)
 		return (NULL);
-	ft_bzero(result, sizeof(result));
+	ft_bzero(result, size * nmemb);
 	return (result);
 }

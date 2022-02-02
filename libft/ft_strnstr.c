@@ -19,14 +19,19 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
-	while (i < len && big[i])
+	if (!little[i])
+		return ((char *)big);
+	while (big[i] && i < len)
 	{
-		if (!little[j])
-			return ((char	*)big + i);
 		if (big[i] == little[j])
 			j++;
 		else
+		{
 			j = 0;
+			i -= j;
+		}
+		if (!little[j])
+			return ((char *)big + i - j + 1);
 		i++;
 	}
 	return (NULL);
