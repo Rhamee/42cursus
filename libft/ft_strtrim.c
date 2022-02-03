@@ -26,8 +26,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		i++;
 	while (ft_strchr(set, s1[j]))
 		j--;
-	if (i >= j)
-		return (NULL);
+	if (i > j)
+		return (ft_strdup(""));
 	else
 	{
 		str = (char *)malloc(sizeof(char) * (j - i + 2));
