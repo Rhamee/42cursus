@@ -34,7 +34,7 @@ int	ft_atoi(const char *nptr)
 	}
 	if (result > 9223372036854775807 && sign == 1)
 		return (-1);
-	if (result > 9223372036854775808 && sign == -1)
+	if (result - 1 > 9223372036854775807 && sign == -1)
 		return (0);
 	return (result * sign);
 }

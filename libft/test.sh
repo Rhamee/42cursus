@@ -21,6 +21,7 @@ bash grademe.sh
 bash grademe.sh
 cd ..
 
+make all
 echo -e "\033[32;1m"unit-test"\033[m"
 read $a
 git clone https://github.com/alelievr/libft-unit-test.git
