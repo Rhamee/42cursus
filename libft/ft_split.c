@@ -60,14 +60,14 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	num = count(s, c);
-	dest = (char**)malloc(sizeof(char*) * num);
+	dest = (char **)malloc(sizeof(char *) * num);
 	if (!dest)
 		return (NULL);
 	while (i < num)
 	{
 		while (s[j] == c)
 			j++;
-		dest[i] = (char*)malloc(sizeof(char) * (split_strlen(s + j, c) + 1));
+		dest[i] = (char *)malloc(sizeof(char) * (split_strlen(s + j, c) + 1));
 		if (!dest[i])
 			return (split_free(dest, i));
 		ft_strlcpy(dest[i], s + j, split_strlen(s + j, c) + 1);

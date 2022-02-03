@@ -37,12 +37,12 @@ static void	putnum(long long num, char *dst, int sign, int digit)
 	}
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	long long	num;
-	int	sign;
-	int	digit;
-	char *result;
+	int			sign;
+	int			digit;
+	char		*result;
 
 	if (n < 0)
 	{
@@ -58,6 +58,6 @@ char *ft_itoa(int n)
 	result = (char *)malloc(sizeof(char) * digit);
 	if (!result)
 		return (NULL);
-	putnum(num,result, sign, digit);
+	putnum(num, result, sign, digit);
 	return (result);
 }
