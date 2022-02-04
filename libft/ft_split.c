@@ -19,13 +19,13 @@ static int	count(char const *s, char c)
 
 	i = 0;
 	num = 0;
-	while (s[i] != 0 || s[i + 1] != 0)
+	while (s[i])
 	{
 		if (s[i] != c && s[i + 1] == c)
 			num++;
 		i++;
 	}
-	if (s[i] != 0 && s[i] != c)
+	if (s[i - 1] != c)
 		num++;
 	return (num);
 }
@@ -63,9 +63,10 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	num = count(s, c);
-	dest = (char **)malloc(sizeof(char *) * num);
+	dest = (char **)malloc(sizeof(char *) * (num + 1));
 	if (!dest)
 		return (NULL);
+	dest[num] = "\0";
 	while (i < num)
 	{
 		while (s[j] == c)

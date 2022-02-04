@@ -44,9 +44,11 @@ char	*ft_itoa(int n)
 	int			digit;
 	char		*result;
 
+	if (n == 0)
+		return (ft_strdup("0"));
 	if (n < 0)
 	{
-		num = -n;
+		num = -(long long)n;
 		sign = 1;
 	}
 	else
