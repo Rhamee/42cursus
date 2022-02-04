@@ -55,9 +55,10 @@ char	*ft_itoa(int n)
 		sign = 0;
 	}
 	digit = count(num) + sign;
-	result = (char *)malloc(sizeof(char) * digit);
+	result = (char *)malloc(sizeof(char) * (digit + 1));
 	if (!result)
 		return (NULL);
 	putnum(num, result, sign, digit);
+	result[digit] = 0;
 	return (result);
 }

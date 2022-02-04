@@ -19,7 +19,7 @@ static int	count(char const *s, char c)
 
 	i = 0;
 	num = 0;
-	while (s[i] == 0 || s[i + 1] == 0)
+	while (s[i] != 0 || s[i + 1] != 0)
 	{
 		if (s[i] != c && s[i + 1] == c)
 			num++;
@@ -45,8 +45,11 @@ static char	**split_free(char	**dst, int n)
 	while (n >= 0)
 	{
 		free(dst[n]);
+		dst[n] = NULL;
 		n--;
 	}
+	free(dst);
+	dst = NULL;
 	return (NULL);
 }
 
@@ -69,7 +72,7 @@ char	**ft_split(char const *s, char c)
 			j++;
 		dest[i] = (char *)malloc(sizeof(char) * (split_strlen(s + j, c) + 1));
 		if (!dest[i])
-			return (split_free(dest, i));
+			return (split_free(dest, i - 1));
 		ft_strlcpy(dest[i], s + j, split_strlen(s + j, c) + 1);
 		j += split_strlen(s + j, c);
 		i++;
