@@ -24,9 +24,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup(s1));
 	i = 0;
 	j = ft_strlen(s1) - 1;
-	while (ft_strchr(set, s1[i]) && s1[i])
+	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
-	while (ft_strchr(set, s1[j]) && s1[j])
+	while (s1[j] && ft_strchr(set, s1[j]) && j + 1 > i)
 		j--;
 	if (i > j + 1)
 		return (ft_strdup(""));

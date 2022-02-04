@@ -6,7 +6,7 @@
 /*   By: hrha <hrha@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 22:32:48 by hrha              #+#    #+#             */
-/*   Updated: 2022/01/28 22:32:48 by hrha             ###   ########.fr       */
+/*   Updated: 2022/02/04 21:15:58 by hrha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static size_t	split_strlen(const char *s, char c)
 	size_t	i;
 
 	i = 0;
-	while (s[i] != c || s[i] != 0)
+	while (s[i] != c && s[i] != 0)
 		i++;
 	return (i);
 }
@@ -53,20 +53,13 @@ static char	**split_free(char	**dst, int n)
 	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**split_put(char **dest, char const *s, char c, int num)
 {
-	char	**dest;
-	int		num;
 	int		i;
 	int		j;
 
 	i = 0;
 	j = 0;
-	num = count(s, c);
-	dest = (char **)malloc(sizeof(char *) * (num + 1));
-	if (!dest)
-		return (NULL);
-	dest[num] = "\0";
 	while (i < num)
 	{
 		while (s[j] == c)
@@ -79,4 +72,19 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 	return (dest);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**dest;
+	int		num;
+
+	if (!s)
+		return (NULL);
+	num = count(s, c);
+	dest = (char **)malloc(sizeof(char *) * (num + 1));
+	if (!dest)
+		return (NULL);
+	dest[num] = NULL;
+	return (split_put(dest, s, c, num));
 }
