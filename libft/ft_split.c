@@ -25,6 +25,8 @@ static int	count(char const *s, char c)
 			num++;
 		i++;
 	}
+	if (i == 0)
+		return (0);
 	if (s[i - 1] != c)
 		num++;
 	return (num);
