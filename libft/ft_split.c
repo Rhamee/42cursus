@@ -83,7 +83,10 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	num = count(s, c);
+	if (!c)
+		num = 1;
+	else
+		num = count(s, c);
 	dest = (char **)malloc(sizeof(char *) * (num + 1));
 	if (!dest)
 		return (NULL);
