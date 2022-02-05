@@ -55,10 +55,6 @@ read $a
 make all
 ls
 
-echo -e "\033[32;1m"make bonus"\033[m"
-read $a
-make bonus
-ls
 
 echo -e "\033[32;1m"relink"\033[m"
 read $a

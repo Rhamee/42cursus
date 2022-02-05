@@ -10,8 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
-CFLAGS = -c -Wall -Wextra -Werror
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 SRCS = \
 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
@@ -33,7 +33,7 @@ $(NAME) : $(OBJS)
 
 
 $(OBJS) : $(SRCS)
-	$(CC) $(CFLAGS) $(SRCS)
+	$(CC) $(CFLAGS) -c $(SRCS)
 
 
 all : $(NAME)
