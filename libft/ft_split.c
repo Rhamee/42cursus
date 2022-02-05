@@ -29,6 +29,8 @@ static int	count(char const *s, char c)
 		return (0);
 	if (s[i - 1] != c)
 		num++;
+	if (!c)
+		num--;
 	return (num);
 }
 
@@ -83,10 +85,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	if (!c)
-		num = 1;
-	else
-		num = count(s, c);
+	num = count(s, c);
 	dest = (char **)malloc(sizeof(char *) * (num + 1));
 	if (!dest)
 		return (NULL);
